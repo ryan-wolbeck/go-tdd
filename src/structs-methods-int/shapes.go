@@ -13,19 +13,30 @@ func (r Rectangle) Area() float64 {
 	return r.Width * r.Height
 }
 
-//Circle : struck for the parameters of a circle
+//Circle : struct for the parameters of a circle
 type Circle struct {
 	Radius float64
-}
-
-//Shape : interface to allow either struct to be passed to the area method properly
-type Shape interface {
-	Area() float64
 }
 
 //Area : Method to take in the radius of a circle and return it's area
 func (c Circle) Area() float64 {
 	return math.Pi * c.Radius * c.Radius
+}
+
+//Triangle : struct for the parameters of a triangle
+type Triangle struct {
+	Base   float64
+	Height float64
+}
+
+//Area : Area method for a triangle
+func (c Triangle) Area() float64 {
+	return .5 * c.Base * c.Height
+}
+
+//Shape : interface to allow either struct to be passed to the area method properly
+type Shape interface {
+	Area() float64
 }
 
 //Perimeter : Takes in width and height and returns the perimeter of the rectangle
